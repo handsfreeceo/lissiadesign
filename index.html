@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Marketing Material Design Services — Lissia Design LLC</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#f0f8fa;color:#333;min-height:100vh}
+header{background:#0d2b45;padding:20px 24px;color:#fff}
+header h1{font-size:22px;font-weight:900}
+header p{font-size:13px;color:#12b3cc;margin-top:4px}
+.tab-bar{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.tab-bar button{background:rgba(255,255,255,.1);color:#fff;border:none;border-radius:6px;padding:7px 16px;cursor:pointer;font-weight:700;font-size:12px}
+.tab-bar button.active{background:rgba(255,255,255,.25)}
+.container{max-width:1200px;margin:0 auto;padding:24px 16px}
+.filter-bar{background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:20px;box-shadow:0 1px 6px rgba(0,0,0,.06);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filter-bar input{border:1px solid #cde;border-radius:6px;padding:7px 12px;font-size:12px;min-width:200px;outline:none}
+.pill{border:none;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:10px;font-weight:700;background:#eee;color:#0d2b45}
+.pill.active{background:#0a7b8c;color:#fff}
+.pill.bundle.active{background:#f0c040;color:#0d2b45}
+.count{font-size:12px;color:#888;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.07);overflow:hidden;display:flex;flex-direction:column;border:1px solid #dce8ec}
+.card.bundle{border:2px solid #f0c040}
+.bundle-banner{background:#f0c040;color:#0d2b45;text-align:center;font-size:10px;font-weight:800;padding:3px 0;letter-spacing:1px}
+.card-body{padding:16px 16px 0;flex:1}
+.badge{display:inline-block;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;margin-bottom:6px}
+.card-title{font-weight:800;color:#0d2b45;font-size:14px;margin-bottom:6px}
+.card-meta{display:flex;gap:12px;font-size:11px;color:#777;margin-bottom:8px}
+.card-desc{font-size:12px;color:#555;line-height:1.6;margin-bottom:8px}
+.bundle-inc{background:#f0f8fa;border-radius:6px;padding:6px 10px;font-size:11px;color:#555;margin-bottom:8px}
+.card-price{font-size:19px;font-weight:900;color:#0a7b8c}
+.card-footer{padding:12px 16px}
+.toggle-btn{width:100%;background:none;border:1px solid #0a7b8c;color:#0a7b8c;border-radius:6px;padding:5px 10px;cursor:pointer;font-size:11px;margin-bottom:8px;font-weight:600}
+.details{font-size:11px;color:#444;margin-bottom:10px;display:none}
+.details.open{display:block}
+.details h4{font-weight:700;color:#0d2b45;margin:8px 0 4px}
+.details li{padding-left:12px;margin-bottom:2px;list-style:disc;list-style-position:inside}
+.addon-item{display:flex;align-items:center;gap:6px;padding:2px 0;cursor:pointer;font-size:11px}
+.add-btn{width:100%;background:#0a7b8c;color:#fff;border:none;border-radius:8px;padding:10px;cursor:pointer;font-weight:800;font-size:13px}
+.add-btn.added{background:#2ec27a}
+#cart-fab{position:fixed;bottom:24px;right:24px;z-index:200;background:#0d2b45;color:#fff;border:none;border-radius:50px;padding:13px 22px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);font-size:14px}
+#cart-panel{position:fixed;bottom:72px;right:24px;z-index:200;background:#fff;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.15);width:320px;max-height:420px;overflow-y:auto;padding:16px;display:none}
+#cart-panel.open{display:block}
+#cart-panel h3{font-weight:800;color:#0d2b45;margin-bottom:12px}
+.cart-item{border-bottom:1px solid #eee;padding-bottom:10px;margin-bottom:10px}
+.cart-item-name{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:#0d2b45}
+.cart-addon{display:flex;justify-content:space-between;font-size:11px;color:#666;padding-left:10px}
+.remove-btn{background:none;border:none;color:#e05050;cursor:pointer;font-size:11px;padding:0;margin-top:3px}
+.cart-total{display:flex;justify-content:space-between;font-weight:800;color:#0d2b45;font-size:14px;padding-top:8px;border-top:2px solid #eee;margin-top:8px}
+.checkout-btn{width:100%;background:#2ec27a;color:#fff;border:none;border-radius:8px;padding:11px;font-weight:800;cursor:pointer;margin-top:10px;font-size:13px}
+.sec{background:#fff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #dce8ec}
+.sec-title{font-weight:800;color:#0d2b45;font-size:15px;margin-bottom:14px;border-bottom:2px solid #0a7b8c;padding-bottom:6px}
+.admin-table{width:100%;border-collapse:collapse;font-size:12px}
+.admin-table th{background:#f0f8fa;padding:9px 12px;text-align:left;color:#0d2b45;font-weight:700;border-bottom:2px solid #0a7b8c}
+.admin-table td{padding:8px 12px;border-bottom:1px solid #f0f0f0}
+.checklist label{display:flex;gap:10px;align-items:flex-start;margin-bottom:9px;font-size:12px;cursor:pointer;line-height:1.5}
+.no-results{text-align:center;color:#aaa;padding:60px;font-size:16px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}header h1{font-size:17px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>&#10024; Marketing Material Design Services</h1>
+  <p>Lissia Design LLC &middot; 42 Services &middot; 8 Categories &middot; 4 Bundles</p>
+  <div class="tab-bar">
+    <button onclick="showTab('catalog')" id="tab-catalog" class="active">&#128717; Service Catalog</button>
+    <button onclick="showTab('admin')" id="tab-admin">&#9881; Admin QA</button>
+  </div>
+</header>
+
+<div id="page-catalog">
+  <div class="container">
+    <div class="filter-bar">
+      <input type="text" id="search" placeholder="Search services..." oninput="renderCards()"/>
+      <button class="pill active" onclick="setFilter('ALL',this)">All</button>
+      <button class="pill" onclick="setFilter('A',this)">Business Essentials</button>
+      <button class="pill" onclick="setFilter('B',this)">Flyers &amp; Print</button>
+      <button class="pill" onclick="setFilter('C',this)">Signs &amp; Banners</button>
+      <button class="pill" onclick="setFilter('D',this)">Stickers &amp; Labels</button>
+      <button class="pill" onclick="setFilter('E',this)">Apparel</button>
+      <button class="pill" onclick="setFilter('F',this)">Promo Products</button>
+      <button class="pill bundle" onclick="setFilter('G',this)">&#9733; Bundles</button>
+      <button class="pill" onclick="setFilter('H',this)">Digital</button>
+    </div>
+    <div class="count" id="count"></div>
+    <div class="grid" id="grid"></div>
+    <div class="no-results" id="no-results" style="display:none">No services match your filter.</div>
+  </div>
+</div>
+
+<div id="page-admin" style="display:none">
+  <div class="container">
+    <div class="sec"><div class="sec-title">&#10003; Admin QA Checklist</div><div id="checklist"></div></div>
+    <div class="sec"><div class="sec-title">&#128203; Catalog Summary</div><table class="admin-table" id="summary-table"></table></div>
+  </div>
+</div>
+
+<button id="cart-fab" onclick="toggleCart()">&#128722; Cart (<span id="cart-count">0</span>) &mdash; $<span id="cart-total">0</span></button>
+<div id="cart-panel"><h3>Your Cart</h3><div id="cart-items"></div></div>
+
+<script>
+var SUBS={A:'Business Essentials',B:'Flyers, Handouts & Print Promos',C:'Signs, Banners & Event Graphics',D:'Stickers, Labels & Packaging',E:'Apparel & Uniforms',F:'Promotional Products',G:'Marketing Kits & Bundles',H:'Digital Add-Ons'};
+var ADDONS=[
+  {id:'rush',name:'Rush Design (24-48 hr)',price:75},
+  {id:'concepts2',name:'2 Concepts Upgrade',price:50},
+  {id:'concepts3',name:'3 Concepts Upgrade',price:85},
+  {id:'revisions',name:'Additional Revision Pack',price:40},
+  {id:'source',name:'Source File Delivery (AI/PSD/INDD)',price:60},
+  {id:'copy',name:'Copywriting Add-On',price:80},
+  {id:'stock',name:'Stock Photo Sourcing',price:35},
+  {id:'brand_check',name:'Brand Consistency Check',price:45},
+  {id:'vendor_prep',name:'Vendor Template Setup / Preflight',price:55}
+];
+var DD=['Print-ready PDF with bleed/crop marks','Web-ready PNG/JPG exports','2 revision rounds included'];
+var DI=['Logo file (or request logo recreation add-on)','Brand colors (or choose for me)','Text/copy to include','Contact info / address (if relevant)','Examples/inspiration links (optional)'];
+var S=[
+  {id:'a1',sub:'A',name:'Business Card Design',price:95,desc:'Professional, print-ready business card design reflecting your brand identity.',d:[...DD,'Both sides designed (if double-sided)'],i:[...DI],t:'3 business days'},
+  {id:'a2',sub:'A',name:'Letterhead Design',price:85,desc:'Branded letterhead template for professional correspondence.',d:[...DD,'DOCX editable template'],i:[...DI],t:'3 business days'},
+  {id:'a3',sub:'A',name:'Envelope Design (Standard + Window)',price:90,desc:'Custom envelope design in both standard and window formats.',d:[...DD,'#10 and window envelope layouts'],i:[...DI],t:'3 business days'},
+  {id:'a4',sub:'A',name:'Presentation Folder Design',price:145,desc:'Custom presentation folder with pocket and business card slot layouts.',d:[...DD,'Flat dieline + folded mockup'],i:[...DI],t:'3 business days'},
+  {id:'a5',sub:'A',name:'Notepad / NCR Form Design',price:120,desc:'Professional notepad or multi-part NCR form for invoices or work orders.',d:[...DD,'Multi-part form layout'],i:[...DI,'Form field layout/content'],t:'3 business days'},
+  {id:'b1',sub:'B',name:'Flyer Design (Single or Double-Sided)',price:99,desc:'Eye-catching flyer design for events, promotions, or general marketing.',d:[...DD],i:[...DI],t:'3 business days'},
+  {id:'b2',sub:'B',name:'Postcard / EDDM Mailer Design',price:115,desc:'Targeted postcard design sized and formatted for EDDM mailing programs.',d:[...DD,'EDDM compliance layout with indicia zone'],i:[...DI,'Offer/CTA details'],t:'3 business days'},
+  {id:'b3',sub:'B',name:'Brochure Design (Tri-fold, Bi-fold, Z-fold)',price:165,desc:'Full brochure design in your choice of fold style.',d:[...DD,'Panel-by-panel layout with fold marks'],i:[...DI,'All panel content/copy'],t:'3 business days'},
+  {id:'b4',sub:'B',name:'Rack Card Design',price:85,desc:'Slim rack card design ideal for display stands and hotel lobbies.',d:[...DD],i:[...DI],t:'3 business days'},
+  {id:'b5',sub:'B',name:'Door Hanger Design',price:80,desc:'Custom door hanger design for direct neighborhood marketing.',d:[...DD],i:[...DI],t:'3 business days'},
+  {id:'b6',sub:'B',name:'Menu / Price Sheet Design',price:135,desc:'Clean, professional menu or price sheet design for print or digital use.',d:[...DD,'Digital web-optimized PDF'],i:[...DI,'Full menu/price list content'],t:'3 business days'},
+  {id:'b7',sub:'B',name:'Coupon / Voucher Design',price:75,desc:'Branded coupon or gift voucher design with perforation-ready layout.',d:[...DD,'Perforation guide marks'],i:[...DI,'Offer terms and expiration'],t:'3 business days'},
+  {id:'c1',sub:'C',name:'Retractable Banner Design',price:125,desc:'Vertical retractable banner designed for trade shows and events.',d:[...DD],i:[...DI],t:'3 business days'},
+  {id:'c2',sub:'C',name:'Vinyl Banner Design',price:110,desc:'Large-format vinyl banner design for outdoor or indoor display.',d:[...DD],i:[...DI,'Banner dimensions'],t:'3 business days'},
+  {id:'c3',sub:'C',name:'Yard Sign Design',price:85,desc:'Bold, readable yard sign design for real estate, campaigns, or promotions.',d:[...DD],i:[...DI],t:'3 business days'},
+  {id:'c4',sub:'C',name:'A-Frame / Sidewalk Sign Design',price:95,desc:'Double-sided A-frame or sidewalk sign design for storefront traffic.',d:[...DD,'Both panel layouts'],i:[...DI],t:'3 business days'},
+  {id:'c5',sub:'C',name:'Foam Board / Poster Design',price:100,desc:'Large-format foam board or poster design for indoor displays.',d:[...DD],i:[...DI],t:'3 business days'},
+  {id:'c6',sub:'C',name:'Window Cling / Window Decal Design',price:90,desc:'Custom window cling or decal design for storefronts.',d:[...DD,'Reversed/mirrored version for inside application'],i:[...DI],t:'3 business days'},
+  {id:'c7',sub:'C',name:'Trade Show Backdrop Design',price:195,desc:'Full-bleed trade show backdrop or step-and-repeat wall design.',d:[...DD,'Tiled panels if required by vendor'],i:[...DI,'Exact backdrop dimensions'],t:'3 business days'},
+  {id:'d1',sub:'D',name:'Logo Sticker Design (Die-Cut / Kiss-Cut)',price:85,desc:'Custom sticker design optimized for die-cut or kiss-cut production.',d:[...DD,'Cut path/dieline file'],i:[...DI],t:'3 business days'},
+  {id:'d2',sub:'D',name:'Product Label Design',price:130,desc:'Professional product label design formatted for your container dimensions.',d:[...DD,'Wraparound or front/back panel layouts'],i:[...DI,'Container dimensions and material'],t:'3 business days'},
+  {id:'d3',sub:'D',name:'Shipping Label / Address Label Design',price:70,desc:'Branded shipping or address label design for professional packaging.',d:[...DD],i:[...DI],t:'3 business days'},
+  {id:'d4',sub:'D',name:'Packaging Sleeve / Box Wrap Design',price:175,desc:'Full packaging sleeve or box wrap design for retail or gift products.',d:[...DD,'Flat dieline and 3D mockup'],i:[...DI,'Exact box/sleeve dimensions and dieline'],t:'3 business days'},
+  {id:'e1',sub:'E',name:'T-Shirt / Polo / Hoodie Print-Ready Design',price:110,desc:'Screen-print or DTG-ready apparel graphic design with placement mockups.',d:[...DD,'Vector art + garment mockup (front/back)'],i:[...DI,'Garment color, print location, size info'],t:'3 business days'},
+  {id:'e2',sub:'E',name:'Hat / Cap Embroidery Design',price:95,desc:'Simplified, stitch-friendly art file optimized for embroidery digitization.',d:[...DD,'Simplified vector; digitizing referral'],i:[...DI,'Cap style, patch area size'],t:'3 business days'},
+  {id:'e3',sub:'E',name:'Hi-Vis / Workwear Logo Placement Mockups',price:85,desc:'Logo placement mockup files for hi-vis vests, jackets, and workwear.',d:[...DD,'Placement mockup per garment'],i:[...DI,'Garment photos or templates'],t:'3 business days'},
+  {id:'e4',sub:'E',name:'Team / Event Shirt Design',price:140,desc:'Custom team or event shirt with sponsor logo layout on front, back, or sleeves.',d:[...DD,'Full front/back layout + sponsor tier guide'],i:[...DI,'Sponsor logos, sponsor tier list'],t:'3 business days'},
+  {id:'f1',sub:'F',name:'Pen / Stylus Imprint Layout',price:60,desc:'Logo imprint artwork sized and formatted for pen or stylus printing.',d:[...DD],i:[...DI],t:'3 business days'},
+  {id:'f2',sub:'F',name:'Mug / Tumbler Wrap Design',price:85,desc:'Full wraparound mug or tumbler design for sublimation or heat transfer.',d:[...DD,'Wrap template matched to vessel size'],i:[...DI,'Mug/tumbler dimensions or vendor template'],t:'3 business days'},
+  {id:'f3',sub:'F',name:'Tote Bag / Backpack Print Layout',price:80,desc:'Branded tote or backpack imprint design ready for screen print or heat press.',d:[...DD],i:[...DI,'Bag dimensions, print area'],t:'3 business days'},
+  {id:'f4',sub:'F',name:'Water Bottle Print Layout',price:70,desc:'Branded water bottle wrap or imprint design.',d:[...DD],i:[...DI,'Bottle size, vendor template'],t:'3 business days'},
+  {id:'f5',sub:'F',name:'Notebook / Journal Cover Design',price:90,desc:'Custom notebook or journal cover design for branded giveaways.',d:[...DD],i:[...DI,'Notebook dimensions, binding type'],t:'3 business days'},
+  {id:'f6',sub:'F',name:'Keychain / Koozie / Small Giveaway Layouts',price:65,desc:'Compact imprint artwork for keychains, koozies, and small promotional items.',d:[...DD],i:[...DI],t:'3 business days'},
+  {id:'f7',sub:'F',name:'Tablecloth / Table Runner Design',price:120,desc:'Custom tablecloth or runner design for branded trade show displays.',d:[...DD],i:[...DI,'Table size (6ft / 8ft)'],t:'3 business days'},
+  {id:'f8',sub:'F',name:'Pop-up Tent / Canopy Graphics Design',price:195,desc:'Full-coverage canopy wall and valance design for branded outdoor tents.',d:[...DD,'Full-bleed panel files per wall + valance'],i:[...DI,'Tent size, vendor template'],t:'3 business days'},
+  {id:'g1',sub:'G',name:'Brand Starter Kit Design',price:249,desc:'Essential brand collateral bundle: business card + letterhead + email signature.',d:['Business card (front + back)','Letterhead template','Email signature (HTML + PNG)','Print-ready PDFs','Web exports'],i:[...DI],t:'5 business days',bundle:true,inc:'Business Card + Letterhead + Email Signature'},
+  {id:'g2',sub:'G',name:'Event Kit Design',price:449,desc:'Complete event package: banner + tablecloth + handout + promo item imprint.',d:['Retractable or vinyl banner','Tablecloth design','Event flyer/handout','Promo item imprint layout','All print-ready files'],i:[...DI,'Event name, date, venue details'],t:'5 business days',bundle:true,inc:'Banner + Tablecloth + Flyer + Promo Item'},
+  {id:'g3',sub:'G',name:'Direct Mail Kit Design',price:299,desc:'Full direct mail package: postcard + offer insert + EDDM mailing panel.',d:['EDDM-ready postcard','Offer insert/flyer','Mailing panel with indicia zone','Print-ready PDFs'],i:[...DI,'Target offer/CTA, mailing route details'],t:'5 business days',bundle:true,inc:'EDDM Postcard + Offer Insert + Mailing Panel'},
+  {id:'g4',sub:'G',name:'Grand Opening Kit Design',price:399,desc:'High-impact grand opening package: yard sign + banner + flyers + window decals.',d:['Yard sign design','Vinyl or retractable banner','Flyer design (double-sided)','Window cling/decal design','All print-ready files'],i:[...DI,'Opening date, address, special offers'],t:'5 business days',bundle:true,inc:'Yard Sign + Banner + Flyer + Window Decal'},
+  {id:'h1',sub:'H',name:'Social Media Ad Set Design',price:130,desc:'Branded ad graphics in all major sizes for Facebook, Instagram, and LinkedIn.',d:['FB feed, story, carousel sizes','IG feed + story sizes','LinkedIn banner + sponsored sizes','Web-ready PNGs'],i:[...DI,'Ad headline, offer, CTA text'],t:'3 business days'},
+  {id:'h2',sub:'H',name:'Email Signature Design',price:75,desc:'Branded HTML email signature with logo, contact details, and social links.',d:['HTML file (Gmail/Outlook compatible)','PNG fallback version','Setup instructions'],i:[...DI,'All contact info, social profile URLs'],t:'3 business days'},
+  {id:'h3',sub:'H',name:'Google Business Profile Cover & Post Graphics',price:95,desc:'Optimized cover photo and post graphics sized for Google Business Profile.',d:['Cover photo (1332x750px)','5 branded post graphic templates','Web-ready PNGs'],i:[...DI,'Business hours, current promotions'],t:'3 business days'},
+  {id:'h4',sub:'H',name:'QR Code Landing Panel Design',price:85,desc:'Print-safe QR placement design with scan testing and branded call-to-action panel.',d:['QR panel layout (print + digital)','Scan-tested QR code file','Branded surround graphic'],i:[...DI,'Destination URL'],t:'3 business days'}
+];
+
+var activeFilter='ALL',cart={},expanded={},addons={};
+function setFilter(f,btn){activeFilter=f;document.querySelectorAll('.pill').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');renderCards();}
+function renderCards(){
+  var q=document.getElementById('search').value.toLowerCase();
+  var filtered=S.filter(function(s){return(activeFilter==='ALL'||s.sub===activeFilter)&&(!q||s.name.toLowerCase().includes(q)||s.desc.toLowerCase().includes(q));});
+  document.getElementById('count').textContent='Showing '+filtered.length+' of '+S.length+' services';
+  var grid=document.getElementById('grid'),nr=document.getElementById('no-results');
+  if(!filtered.length){grid.innerHTML='';nr.style.display='block';return;}
+  nr.style.display='none';
+  grid.innerHTML=filtered.map(cardHTML).join('');
+}
+function cardHTML(s){
+  var color=s.sub==='G'?'#f0c040':'#0a7b8c',tc=s.sub==='G'?'#0d2b45':'#fff';
+  var at=(addons[s.id]||[]).reduce(function(sum,a){return sum+a.price;},0);
+  var isExp=!!expanded[s.id],inCart=!!cart[s.id];
+  return'<div class="card'+(s.bundle?' bundle':'')+'" id="card-'+s.id+'">'+
+    (s.bundle?'<div class="bundle-banner">&#9733; BUNDLE &mdash; SAVE MORE</div>':'')+
+    '<div class="card-body">'+
+    '<span class="badge" style="background:'+color+';color:'+tc+'">'+SUBS[s.sub]+'</span>'+
+    '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">'+
+    '<div class="card-title">'+s.name+'</div><div class="card-price">$'+s.price+'</div></div>'+
+    '<p class="card-desc">'+s.desc+'</p>'+
+    (s.inc?'<div class="bundle-inc"><strong>Includes:</strong> '+s.inc+'</div>':'')+
+    '<div class="card-meta"><span>&#9201; '+s.t+'</span><span>&#9999; 2 revisions</span></div></div>'+
+    '<div class="card-footer">'+
+    '<button class="toggle-btn" onclick="toggleExpand(\''+s.id+'\')">'+
+    (isExp?'&#9650; Hide Details':'&#9660; View Details + Add-ons')+'</button>'+
+    '<div class="details'+(isExp?' open':'')+'" id="details-'+s.id+'">'+
+    '<h4>Deliverables:</h4><ul>'+s.d.map(function(d){return'<li>'+d+'</li>';}).join('')+'</ul>'+
+    '<h4>Required Inputs:</h4><ul>'+s.i.map(function(i){return'<li>'+i+'</li>';}).join('')+'</ul>'+
+    '<h4>Add-ons:</h4>'+
+    ADDONS.map(function(a){var chk=(addons[s.id]||[]).some(function(x){return x.id===a.id;});
+      return'<label class="addon-item"><input type="checkbox"'+(chk?' checked':'')+' onchange="toggleAddon(\''+s.id+'\',\''+a.id+'\')"/> '+a.name+' <strong style="color:#0a7b8c">+$'+a.price+'</strong></label>';}).join('')+
+    '</div>'+
+    '<button class="add-btn'+(inCart?' added':'')+'" onclick="addToCart(\''+s.id+'\')">'+
+    (inCart?'&#10003; In Cart':'Add to Cart &mdash; $'+(s.price+at).toLocaleString())+'</button></div></div>';
+}
+function toggleExpand(id){expanded[id]=!expanded[id];renderCards();}
+function toggleAddon(sid,aid){
+  if(!addons[sid])addons[sid]=[];
+  var idx=addons[sid].findIndex(function(a){return a.id===aid;});
+  if(idx>=0)addons[sid].splice(idx,1);
+  else addons[sid].push(ADDONS.find(function(a){return a.id===aid;}));
+  renderCards();
+}
+function addToCart(id){
+  var svc=S.find(function(s){return s.id===id;});
+  cart[id]=Object.assign({},svc,{selectedAddons:(addons[id]||[]).slice()});
+  renderCart();renderCards();
+  document.getElementById('cart-panel').classList.add('open');
+}
+function removeFromCart(id){delete cart[id];renderCart();renderCards();}
+function renderCart(){
+  var items=Object.values(cart);
+  var total=items.reduce(function(s,i){return s+i.price+(i.selectedAddons||[]).reduce(function(a,b){return a+b.price;},0);},0);
+  document.getElementById('cart-count').textContent=items.length;
+  document.getElementById('cart-total').textContent=total.toLocaleString();
+  var el=document.getElementById('cart-items');
+  if(!items.length){el.innerHTML='<p style="color:#aaa;font-size:12px;text-align:center;padding:20px 0">No items yet.</p>';return;}
+  el.innerHTML=items.map(function(item){
+    return'<div class="cart-item"><div class="cart-item-name"><span>'+item.name+'</span><span>$'+item.price+'</span></div>'+
+    (item.selectedAddons||[]).map(function(a){return'<div class="cart-addon"><span>+ '+a.name+'</span><span>$'+a.price+'</span></div>';}).join('')+
+    '<button class="remove-btn" onclick="removeFromCart(\''+item.id+'\')">Remove</button></div>';
+  }).join('')+
+  '<div class="cart-total"><span>Total</span><span>$'+total.toLocaleString()+'</span></div>'+
+  '<button class="checkout-btn" onclick="alert(\'Checkout coming soon!\')">Proceed to Checkout &#8594;</button>';
+}
+function toggleCart(){document.getElementById('cart-panel').classList.toggle('open');}
+function showTab(t){
+  document.getElementById('page-catalog').style.display=t==='catalog'?'':'none';
+  document.getElementById('page-admin').style.display=t==='admin'?'':'none';
+  document.getElementById('tab-catalog').className=t==='catalog'?'active':'';
+  document.getElementById('tab-admin').className=t==='admin'?'active':'';
+  if(t==='admin')renderAdmin();
+}
+function renderAdmin(){
+  var checks=['All 8 subcategories visible in filter bar','All 42 service items appear in catalog','Filter by subcategory returns correct items only','All 4 bundles show BUNDLE badge','Each card shows price, turnaround, revision count','Expanding a card reveals deliverables + inputs + add-ons','Selecting add-ons updates cart total correctly','Add to Cart creates line item with correct price','Cart totals accurate across mixed items','Checkout button present when cart non-empty','Bundle items have gold border treatment','Search/filter works correctly'];
+  document.getElementById('checklist').innerHTML=checks.map(function(c){return'<label class="checklist"><input type="checkbox"/> <span>'+c+'</span></label>';}).join('');
+  var rows=Object.entries(SUBS).map(function(e){
+    var id=e[0],label=e[1],items=S.filter(function(s){return s.sub===id;}),prices=items.map(function(i){return i.price;});
+    return'<tr><td><span class="badge" style="background:'+(id==='G'?'#f0c040':'#0d2b45')+';color:'+(id==='G'?'#0d2b45':'#fff')+'">'+id+'</span></td><td>'+label+'</td><td style="font-weight:700;color:#0a7b8c">'+items.length+'</td><td>$'+Math.min.apply(null,prices)+'-$'+Math.max.apply(null,prices)+'</td></tr>';
+  });
+  var all=S.map(function(s){return s.price;});
+  document.getElementById('summary-table').innerHTML='<thead><tr><th>Sub</th><th>Category</th><th>Items</th><th>Price Range</th></tr></thead><tbody>'+rows.join('')+'<tr style="background:#f0f8fa;font-weight:700"><td colspan="2" style="padding:8px 12px">TOTAL</td><td style="padding:8px 12px;color:#0a7b8c">'+S.length+'</td><td style="padding:8px 12px">$'+Math.min.apply(null,all)+'-$'+Math.max.apply(null,all)+'</td></tr></tbody>';
+}
+renderCards();renderCart();
+</script>
+</body>
+</html>
