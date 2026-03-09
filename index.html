@@ -1,252 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Marketing Material Design Services — Lissia Design LLC</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lissia Design LLC</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',sans-serif;background:#f0f8fa;color:#333;min-height:100vh}
-header{background:#0d2b45;padding:20px 24px;color:#fff}
-header h1{font-size:22px;font-weight:900}
-header p{font-size:13px;color:#12b3cc;margin-top:4px}
-.tab-bar{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-.tab-bar button{background:rgba(255,255,255,.1);color:#fff;border:none;border-radius:6px;padding:7px 16px;cursor:pointer;font-weight:700;font-size:12px}
-.tab-bar button.active{background:rgba(255,255,255,.25)}
-.container{max-width:1200px;margin:0 auto;padding:24px 16px}
-.filter-bar{background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:20px;box-shadow:0 1px 6px rgba(0,0,0,.06);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.filter-bar input{border:1px solid #cde;border-radius:6px;padding:7px 12px;font-size:12px;min-width:200px;outline:none}
-.pill{border:none;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:10px;font-weight:700;background:#eee;color:#0d2b45}
-.pill.active{background:#0a7b8c;color:#fff}
-.pill.bundle.active{background:#f0c040;color:#0d2b45}
-.count{font-size:12px;color:#888;margin-bottom:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.07);overflow:hidden;display:flex;flex-direction:column;border:1px solid #dce8ec}
-.card.bundle{border:2px solid #f0c040}
-.bundle-banner{background:#f0c040;color:#0d2b45;text-align:center;font-size:10px;font-weight:800;padding:3px 0;letter-spacing:1px}
-.card-body{padding:16px 16px 0;flex:1}
-.badge{display:inline-block;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;margin-bottom:6px}
-.card-title{font-weight:800;color:#0d2b45;font-size:14px;margin-bottom:6px}
-.card-meta{display:flex;gap:12px;font-size:11px;color:#777;margin-bottom:8px}
-.card-desc{font-size:12px;color:#555;line-height:1.6;margin-bottom:8px}
-.bundle-inc{background:#f0f8fa;border-radius:6px;padding:6px 10px;font-size:11px;color:#555;margin-bottom:8px}
-.card-price{font-size:19px;font-weight:900;color:#0a7b8c}
-.card-footer{padding:12px 16px}
-.toggle-btn{width:100%;background:none;border:1px solid #0a7b8c;color:#0a7b8c;border-radius:6px;padding:5px 10px;cursor:pointer;font-size:11px;margin-bottom:8px;font-weight:600}
-.details{font-size:11px;color:#444;margin-bottom:10px;display:none}
-.details.open{display:block}
-.details h4{font-weight:700;color:#0d2b45;margin:8px 0 4px}
-.details li{padding-left:12px;margin-bottom:2px;list-style:disc;list-style-position:inside}
-.addon-item{display:flex;align-items:center;gap:6px;padding:2px 0;cursor:pointer;font-size:11px}
-.add-btn{width:100%;background:#0a7b8c;color:#fff;border:none;border-radius:8px;padding:10px;cursor:pointer;font-weight:800;font-size:13px}
-.add-btn.added{background:#2ec27a}
-#cart-fab{position:fixed;bottom:24px;right:24px;z-index:200;background:#0d2b45;color:#fff;border:none;border-radius:50px;padding:13px 22px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);font-size:14px}
-#cart-panel{position:fixed;bottom:72px;right:24px;z-index:200;background:#fff;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.15);width:320px;max-height:420px;overflow-y:auto;padding:16px;display:none}
-#cart-panel.open{display:block}
-#cart-panel h3{font-weight:800;color:#0d2b45;margin-bottom:12px}
-.cart-item{border-bottom:1px solid #eee;padding-bottom:10px;margin-bottom:10px}
-.cart-item-name{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:#0d2b45}
-.cart-addon{display:flex;justify-content:space-between;font-size:11px;color:#666;padding-left:10px}
-.remove-btn{background:none;border:none;color:#e05050;cursor:pointer;font-size:11px;padding:0;margin-top:3px}
-.cart-total{display:flex;justify-content:space-between;font-weight:800;color:#0d2b45;font-size:14px;padding-top:8px;border-top:2px solid #eee;margin-top:8px}
-.checkout-btn{width:100%;background:#2ec27a;color:#fff;border:none;border-radius:8px;padding:11px;font-weight:800;cursor:pointer;margin-top:10px;font-size:13px}
-.sec{background:#fff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #dce8ec}
-.sec-title{font-weight:800;color:#0d2b45;font-size:15px;margin-bottom:14px;border-bottom:2px solid #0a7b8c;padding-bottom:6px}
-.admin-table{width:100%;border-collapse:collapse;font-size:12px}
-.admin-table th{background:#f0f8fa;padding:9px 12px;text-align:left;color:#0d2b45;font-weight:700;border-bottom:2px solid #0a7b8c}
-.admin-table td{padding:8px 12px;border-bottom:1px solid #f0f0f0}
-.checklist label{display:flex;gap:10px;align-items:flex-start;margin-bottom:9px;font-size:12px;cursor:pointer;line-height:1.5}
-.no-results{text-align:center;color:#aaa;padding:60px;font-size:16px}
-@media(max-width:600px){.grid{grid-template-columns:1fr}header h1{font-size:17px}}
+  :root {
+    --teal: #0a7b8c;
+    --teal-light: #12b3cc;
+    --teal-dark: #065a68;
+    --navy: #0d2b45;
+    --navy-light: #1a3f5c;
+    --green: #2ec27a;
+    --green-light: #4fd494;
+    --white: #ffffff;
+    --off-white: #f0f8fa;
+    --gray: #6b7c8d;
+    --light-gray: #e8f4f7;
+    --gold: #f0c040;
+    --gradient-main: linear-gradient(135deg, #0d2b45 0%, #0a7b8c 50%, #2ec27a 100%);
+    --gradient-card: linear-gradient(135deg, #065a68 0%, #0a7b8c 100%);
+    --shadow: 0 8px 32px rgba(10,123,140,0.18);
+    --shadow-lg: 0 16px 48px rgba(10,123,140,0.25);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--off-white); color: var(--navy); overflow-x: hidden; }
+  nav { background: var(--navy); position: sticky; top:0; z-index:1000; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .nav-inner { display:flex; align-items:center; justify-content:space-between; max-width:1400px; margin:0 auto; padding:0 24px; height:68px; }
+  .nav-logo { display:flex; align-items:center; gap:12px; cursor:pointer; text-decoration:none; }
+  .nav-logo-circle { width:44px; height:44px; border-radius:50%; background: var(--gradient-main); display:flex; align-items:center; justify-content:center; font-weight:900; font-size:16px; color:#fff; letter-spacing:-1px; border: 2px solid var(--teal-light); }
+  .nav-brand { color:#fff; font-size:18px; font-weight:700; line-height:1.2; }
+  .nav-brand span { color:var(--teal-light); font-style:italic; }
+  .nav-brand small { display:block; font-size:10px; font-weight:400; color:var(--gray); letter-spacing:2px; }
+  .nav-links { display:flex; gap:4px; align-items:center; flex-wrap:wrap; }
+  .nav-links a { color:#ccc; text-decoration:none; padding:8px 14px; border-radius:6px; font-size:13px; font-weight:500; transition:all 0.2s; white-space:nowrap; cursor:pointer; }
+  .nav-links a:hover, .nav-links a.active { background:var(--teal); color:#fff; }
+  .nav-cta { background: var(--gradient-main) !important; color:#fff !important; font-weight:700 !important; padding:8px 18px !important; border-radius:20px !important; border: 1px solid var(--teal-light) !important; }
+  .nav-pay-btn { background: var(--gold) !important; color: var(--navy) !important; font-weight:700 !important; padding:8px 14px !important; border-radius:20px !important; font-size:12px !important; }
+  .page { display:none; min-height:calc(100vh - 68px); }
+  .page.active { display:block; }
+  .hero { background: var(--gradient-main); padding: 80px 24px; text-align:center; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .hero-content { position:relative; max-width:800px; margin:0 auto; }
+  .hero h1 { font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:#fff; line-height:1.2; margin-bottom:16px; }
+  .hero h1 em { color:var(--green-light); font-style:italic; }
+  .hero p { font-size:1.1rem; color:rgba(255,255,255,0.85); margin-bottom:32px; line-height:1.7; }
+  .hero-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .btn { padding:14px 32px; border-radius:30px; font-size:15px; font-weight:700; cursor:pointer; border:none; transition:all 0.25s; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+  .btn-primary { background:var(--white); color:var(--teal-dark); }
+  .btn-primary:hover { background:var(--green-light); color:var(--navy); transform:translateY(-2px); box-shadow:var(--shadow); }
+  .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.6); }
+  .btn-outline:hover { background:rgba(255,255,255,0.15); border-color:#fff; transform:translateY(-2px); }
+  .btn-teal { background:var(--teal); color:#fff; }
+  .btn-teal:hover { background:var(--teal-dark); transform:translateY(-2px); box-shadow:var(--shadow); }
+  .btn-gold { background:var(--gold); color:var(--navy); }
+  .btn-gold:hover { background:#e0b030; transform:translateY(-2px); }
+  .section { padding:64px 24px; max-width:1400px; margin:0 auto; }
+  .section-title { text-align:center; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--navy); margin-bottom:12px; }
+  .section-title span { color:var(--teal); }
+  .section-subtitle { text-align:center; color:var(--gray); margin-bottom:48px; font-size:1.05rem; line-height:1.6; }
+  .cards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:24px; }
+  .card { background:#fff; border-radius:16px; padding:28px; box-shadow: var(--shadow); transition:all 0.3s; border-top: 4px solid var(--teal); }
+  .card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+  .card-icon { width:56px; height:56px; border-radius:14px; background: var(--gradient-card); display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px; }
+  .card h3 { font-size:1.15rem; font-weight:700; color:var(--navy); margin-bottom:10px; }
+  .card p { color:var(--gray); line-height:1.6; font-size:0.95rem; }
+  .blog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:28px; }
+  .blog-card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); transition:all 0.3s; cursor:pointer; }
+  .blog-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+  .blog-img { height:180px; display:flex; align-items:center; justify-content:center; font-size:64px; position:relative; overflow:hidden; }
+  .blog-body { padding:20px; }
+  .blog-tag { display:inline-block; padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; }
+  .tag-seo { background:rgba(10,123,140,0.12); color:var(--teal-dark); }
+  .tag-social { background:rgba(46,194,122,0.12); color:#1a7a50; }
+  .tag-design { background:rgba(13,43,69,0.1); color:var(--navy); }
+  .tag-ppc { background:rgba(240,192,64,0.2); color:#8a6500; }
+  .tag-web { background:rgba(18,179,204,0.12); color:#065a68; }
+  .blog-card h3 { font-size:1.05rem; font-weight:700; color:var(--navy); margin-bottom:8px; line-height:1.4; }
+  .blog-card p { color:var(--gray); font-size:0.9rem; line-height:1.6; margin-bottom:14px; }
+  .blog-meta { display:flex; align-items:center; gap:12px; font-size:0.82rem; color:#aaa; }
+  .scan-box { background: var(--gradient-main); border-radius:20px; padding:48px 32px; text-align:center; color:#fff; position:relative; overflow:hidden; }
+  .scan-box h2 { font-size:2rem; font-weight:800; margin-bottom:12px; }
+  .scan-box p { opacity:0.85; margin-bottom:28px; font-size:1.05rem; }
+  .scan-form { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; max-width:600px; margin:0 auto 16px; }
+  .scan-form input { flex:1; min-width:220px; padding:14px 20px; border-radius:30px; border:none; font-size:15px; outline:none; color:var(--navy); }
+  .scan-platforms { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:20px; opacity:0.8; }
+  .scan-platforms span { background:rgba(255,255,255,0.15); padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600; }
+  .scan-results { display:none; background:#fff; border-radius:16px; padding:32px; margin-top:24px; text-align:left; color:var(--navy); }
+  .scan-results.show { display:block; }
+  .scan-result-item { display:flex; align-items:center; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--light-gray); }
+  .scan-result-item:last-child { border:none; }
+  .status-dot { width:12px; height:12px; border-radius:50%; margin-right:10px; }
+  .status-ok { background:#2ec27a; }
+  .status-warn { background:#f0c040; }
+  .status-err { background:#e05050; }
+  .faq-item { background:#fff; border-radius:12px; margin-bottom:12px; box-shadow: 0 2px 12px rgba(10,123,140,0.08); overflow:hidden; }
+  .faq-q { padding:20px 24px; font-weight:700; color:var(--navy); cursor:pointer; display:flex; justify-content:space-between; align-items:center; transition:background 0.2s; }
+  .faq-q:hover { background:var(--light-gray); }
+  .faq-q .chevron { transition:transform 0.3s; color:var(--teal); font-size:20px; }
+  .faq-a { max-height:0; overflow:hidden; transition:max-height 0.4s ease; padding:0 24px; color:var(--gray); line-height:1.7; }
+  .faq-a.open { max-height:300px; padding:0 24px 20px; }
+  .forum-post { background:#fff; border-radius:14px; padding:24px; box-shadow:var(--shadow); margin-bottom:16px; border-left:4px solid var(--teal); }
+  .forum-post h4 { color:var(--navy); font-weight:700; margin-bottom:8px; }
+  .forum-post p { color:var(--gray); font-size:0.92rem; line-height:1.6; }
+  .forum-meta { display:flex; gap:16px; margin-top:12px; font-size:0.82rem; color:#aaa; flex-wrap:wrap; }
+  .forum-badge { padding:3px 10px; border-radius:20px; font-weight:700; font-size:11px; }
+  .badge-answered { background:rgba(46,194,122,0.15); color:#1a7a50; }
+  .badge-open { background:rgba(240,192,64,0.2); color:#8a6500; }
+  .contact-bar { background:var(--navy); color:#fff; padding:20px 24px; display:flex; align-items:center; justify-content:center; gap:32px; flex-wrap:wrap; font-size:14px; }
+  .contact-bar a { color:var(--teal-light); text-decoration:none; font-weight:600; }
+  .contact-bar a:hover { color:var(--green-light); }
+  .contact-item { display:flex; align-items:center; gap:8px; }
+  .float-support { position:fixed; bottom:24px; right:24px; z-index:999; background: var(--gradient-main); color:#fff; padding:14px 22px; border-radius:30px; border:none; font-size:14px; font-weight:700; cursor:pointer; box-shadow: 0 8px 24px rgba(10,123,140,0.4); display:flex; align-items:center; gap:8px; transition:all 0.25s; }
+  .float-support:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(10,123,140,0.5); }
+  .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:2000; align-items:center; justify-content:center; padding:20px; }
+  .modal-overlay.show { display:flex; }
+  .modal { background:#fff; border-radius:20px; padding:36px; max-width:480px; width:100%; position:relative; box-shadow: 0 24px 80px rgba(0,0,0,0.3); animation: slideUp 0.3s ease; }
+  @keyframes slideUp { from { transform:translateY(30px); opacity:0; } to { transform:translateY(0); opacity:1; } }
+  .modal h3 { font-size:1.4rem; font-weight:800; color:var(--navy); margin-bottom:20px; }
+  .modal-close { position:absolute; top:16px; right:20px; font-size:24px; cursor:pointer; color:var(--gray); border:none; background:none; line-height:1; }
+  .form-group { margin-bottom:16px; }
+  .form-group label { display:block; font-size:13px; font-weight:600; color:var(--navy); margin-bottom:6px; }
+  .form-group input, .form-group textarea, .form-group select { width:100%; padding:12px 16px; border-radius:10px; border:1.5px solid #dce8ec; font-size:14px; outline:none; transition:border 0.2s; font-family:inherit; }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:var(--teal); }
+  .form-group textarea { resize:vertical; min-height:100px; }
+  .form-success { display:none; text-align:center; padding:20px; color:var(--teal-dark); font-weight:700; font-size:1.1rem; }
+  .form-success.show { display:block; }
+  .payment-bar { background: linear-gradient(135deg, var(--gold), #e0a020); padding:16px 24px; text-align:center; display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .payment-bar span { color:var(--navy); font-weight:700; font-size:15px; }
+  .settings-panel { background:#fff; border-radius:16px; padding:28px; box-shadow:var(--shadow); margin-bottom:24px; }
+  .settings-panel h3 { color:var(--navy); font-weight:700; margin-bottom:20px; font-size:1.1rem; }
+  .setting-row { display:flex; align-items:center; justify-content:space-between; padding:14px 0; border-bottom:1px solid var(--light-gray); }
+  .setting-row:last-child { border:none; }
+  .setting-info h4 { font-size:14px; font-weight:600; color:var(--navy); }
+  .setting-info p { font-size:12px; color:var(--gray); margin-top:2px; }
+  .toggle { width:44px; height:24px; border-radius:12px; border:none; cursor:pointer; position:relative; transition:background 0.3s; flex-shrink:0; background: #ccc; }
+  .toggle.on { background:var(--teal); }
+  .toggle::after { content:''; position:absolute; top:3px; left:3px; width:18px; height:18px; border-radius:50%; background:#fff; transition:left 0.3s; }
+  .toggle.on::after { left:23px; }
+  .stats-row { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:20px; margin-bottom:48px; }
+  .stat-box { background: var(--gradient-card); color:#fff; border-radius:16px; padding:24px; text-align:center; }
+  .stat-box .num { font-size:2.2rem; font-weight:900; color:var(--green-light); }
+  .stat-box .lbl { font-size:13px; opacity:0.85; margin-top:4px; }
+  .news-card { background:#fff; border-radius:14px; padding:24px; box-shadow:var(--shadow); display:flex; gap:20px; margin-bottom:20px; transition:all 0.25s; cursor:pointer; }
+  .news-card:hover { transform:translateX(6px); box-shadow:var(--shadow-lg); }
+  .news-icon { font-size:40px; flex-shrink:0; }
+  .news-content h4 { color:var(--navy); font-weight:700; margin-bottom:6px; line-height:1.4; }
+  .news-content p { color:var(--gray); font-size:0.9rem; line-height:1.6; }
+  .news-date { font-size:11px; color:var(--teal); font-weight:600; margin-top:8px; }
+  footer { background:var(--navy); color:rgba(255,255,255,0.7); text-align:center; padding:32px 24px; font-size:13px; }
+  footer strong { color:var(--teal-light); }
 </style>
 </head>
 <body>
-<header>
-  <h1>&#10024; Marketing Material Design Services</h1>
-  <p>Lissia Design LLC &middot; 42 Services &middot; 8 Categories &middot; 4 Bundles</p>
-  <div class="tab-bar">
-    <button onclick="showTab('catalog')" id="tab-catalog" class="active">&#128717; Service Catalog</button>
-    <button onclick="showTab('admin')" id="tab-admin">&#9881; Admin QA</button>
-  </div>
-</header>
 
-<div id="page-catalog">
-  <div class="container">
-    <div class="filter-bar">
-      <input type="text" id="search" placeholder="Search services..." oninput="renderCards()"/>
-      <button class="pill active" onclick="setFilter('ALL',this)">All</button>
-      <button class="pill" onclick="setFilter('A',this)">Business Essentials</button>
-      <button class="pill" onclick="setFilter('B',this)">Flyers &amp; Print</button>
-      <button class="pill" onclick="setFilter('C',this)">Signs &amp; Banners</button>
-      <button class="pill" onclick="setFilter('D',this)">Stickers &amp; Labels</button>
-      <button class="pill" onclick="setFilter('E',this)">Apparel</button>
-      <button class="pill" onclick="setFilter('F',this)">Promo Products</button>
-      <button class="pill bundle" onclick="setFilter('G',this)">&#9733; Bundles</button>
-      <button class="pill" onclick="setFilter('H',this)">Digital</button>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" onclick="showPage('home')">
+      <div class="nav-logo-circle">LD</div>
+      <div class="nav-brand"><span>Lissia</span> Design LLC<small>ELEVATE YOUR ONLINE PRESENCE</small></div>
+    </a>
+    <div class="nav-links">
+      <a onclick="showPage('home')" class="active" id="nav-home">Home</a>
+      <a onclick="showPage('blog')" id="nav-blog">Blog</a>
+      <a onclick="showPage('news')" id="nav-news">Ad News</a>
+      <a onclick="showPage('forum')" id="nav-forum">Forum</a>
+      <a onclick="showPage('faq')" id="nav-faq">FAQ</a>
+      <a onclick="showPage('scan')" id="nav-scan">Free Scan</a>
+      <a onclick="showPage('settings')" id="nav-settings">⚙️ Settings</a>
+      <a onclick="showPayModal()" class="nav-pay-btn">💳 Pay Now</a>
+      <a onclick="showPage('contact')" class="nav-cta" id="nav-contact">Get Started</a>
     </div>
-    <div class="count" id="count"></div>
-    <div class="grid" id="grid"></div>
-    <div class="no-results" id="no-results" style="display:none">No services match your filter.</div>
+  </div>
+</nav>
+
+<div class="payment-bar">
+  <span>🔒 Quick & Secure Invoice Payment</span>
+  <button class="btn btn-teal" style="padding:10px 24px;font-size:13px;" onclick="showPayModal()">Update Payment Info →</button>
+</div>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-content">
+      <h1><em>Elevate</em> Your Online Presence</h1>
+      <p>Full-service digital marketing, web design, SEO, and branding solutions to grow your business and dominate your market.</p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="showPage('contact')">🚀 Start Your Project</button>
+        <button class="btn btn-outline" onclick="showPage('scan')">🔍 Free Business Scan</button>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="stats-row">
+      <div class="stat-box"><div class="num">500+</div><div class="lbl">Clients Served</div></div>
+      <div class="stat-box"><div class="num">98%</div><div class="lbl">Client Satisfaction</div></div>
+      <div class="stat-box"><div class="num">3.2x</div><div class="lbl">Avg. ROI Increase</div></div>
+      <div class="stat-box"><div class="num">12+</div><div class="lbl">Years Experience</div></div>
+    </div>
+    <h2 class="section-title">Our <span>Services</span></h2>
+    <p class="section-subtitle">Everything you need to grow your business online — under one roof.</p>
+    <div class="cards-grid">
+      <div class="card"><div class="card-icon">📈</div><h3>SEO — Search Engine Optimization</h3><p>Rank higher, get found faster. We optimize your website for Google and beyond with proven on-page and off-page SEO strategies.</p></div>
+      <div class="card"><div class="card-icon">🌐</div><h3>Website Creation & Maintenance</h3><p>Beautiful, fast, mobile-first websites built to convert visitors into customers. Ongoing maintenance keeps you secure and up to date.</p></div>
+      <div class="card"><div class="card-icon">📱</div><h3>Social Media Management</h3><p>Consistent, engaging content across Facebook, Instagram, LinkedIn, and more. We build your audience and keep them engaged.</p></div>
+      <div class="card"><div class="card-icon">✍️</div><h3>Content Creation</h3><p>Compelling blog posts, copy, video scripts, and more — crafted to attract, educate, and convert your ideal customer.</p></div>
+      <div class="card"><div class="card-icon">🎨</div><h3>Graphic Design & Branding</h3><p>Logos, brand kits, marketing materials — everything you need to look professional and memorable across all touchpoints.</p></div>
+      <div class="card"><div class="card-icon">📣</div><h3>Paid Advertising (PPC)</h3><p>Google Ads, Facebook Ads, and Instagram Ads campaigns that deliver measurable ROI. Every dollar tracked and optimized.</p></div>
+    </div>
+  </div>
+  <div style="background:var(--light-gray);padding:48px 24px;text-align:center;">
+    <h2 style="font-size:1.8rem;font-weight:800;color:var(--navy);margin-bottom:12px;">Ready to <span style="color:var(--teal);">Grow Your Business?</span></h2>
+    <p style="color:var(--gray);margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto;">Book a free strategy call and let's map out your path to online success.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-teal" onclick="showPage('contact')">📞 Book Free Consultation</button>
+      <button class="btn btn-outline" style="color:var(--navy);border-color:var(--teal);" onclick="showPage('scan')">🔍 Scan My Business Listings</button>
+    </div>
   </div>
 </div>
 
-<div id="page-admin" style="display:none">
-  <div class="container">
-    <div class="sec"><div class="sec-title">&#10003; Admin QA Checklist</div><div id="checklist"></div></div>
-    <div class="sec"><div class="sec-title">&#128203; Catalog Summary</div><table class="admin-table" id="summary-table"></table></div>
+<!-- BLOG -->
+<div class="page" id="page-blog">
+  <div style="background:var(--gradient-main);padding:48px 24px;text-align:center;color:#fff;">
+    <h1 style="font-size:2.2rem;font-weight:900;margin-bottom:12px;">📝 Lissia Design Blog</h1>
+    <p style="opacity:0.85;">Expert insights on SEO, branding, web design, and digital marketing.</p>
+  </div>
+  <div class="section">
+    <div class="blog-grid">
+      <div class="blog-card"><div class="blog-img" style="background:linear-gradient(135deg,#0a7b8c,#2ec27a);">🔍</div><div class="blog-body"><span class="blog-tag tag-seo">SEO</span><h3>10 SEO Mistakes That Are Killing Your Google Rankings in 2025</h3><p>Discover the most common SEO errors small businesses make and exactly how to fix them to reclaim your rankings.</p><div class="blog-meta">📅 Feb 10, 2025 · ⏱ 8 min read</div></div></div>
+      <div class="blog-card"><div class="blog-img" style="background:linear-gradient(135deg,#065a68,#0d2b45);">📱</div><div class="blog-body"><span class="blog-tag tag-social">Social Media</span><h3>The Instagram Algorithm Decoded: What's Working Right Now</h3><p>We analyzed 200+ accounts to find what the Instagram algorithm rewards in 2025. Here's what you need to know.</p><div class="blog-meta">📅 Feb 5, 2025 · ⏱ 6 min read</div></div></div>
+      <div class="blog-card"><div class="blog-img" style="background:linear-gradient(135deg,#1a3f5c,#12b3cc);">🎨</div><div class="blog-body"><span class="blog-tag tag-design">Branding</span><h3>Why Your Logo Isn't Your Brand — And What Actually Matters</h3><p>Brand is so much deeper than a logo. Learn the 5 elements that make customers trust, remember, and choose you.</p><div class="blog-meta">📅 Jan 28, 2025 · ⏱ 5 min read</div></div></div>
+      <div class="blog-card"><div class="blog-img" style="background:linear-gradient(135deg,#8a6500,#f0c040);">📣</div><div class="blog-body"><span class="blog-tag tag-ppc">Paid Ads</span><h3>Google Ads on a Small Budget: How to Compete with Big Brands</h3><p>You don't need $50k/month to run effective Google Ads. These strategies maximize every dollar for small businesses.</p><div class="blog-meta">📅 Jan 20, 2025 · ⏱ 7 min read</div></div></div>
+      <div class="blog-card"><div class="blog-img" style="background:linear-gradient(135deg,#065a68,#2ec27a);">🌐</div><div class="blog-body"><span class="blog-tag tag-web">Web Design</span><h3>Why Page Speed is Your #1 Website Priority in 2025</h3><p>Google now weights Core Web Vitals heavily. A slow site costs you rankings and customers. Here's how to fix it fast.</p><div class="blog-meta">📅 Jan 14, 2025 · ⏱ 9 min read</div></div></div>
+      <div class="blog-card"><div class="blog-img" style="background:linear-gradient(135deg,#0d2b45,#0a7b8c);">✍️</div><div class="blog-body"><span class="blog-tag tag-seo">Content</span><h3>How to Write Blog Posts That Actually Rank on Google</h3><p>Learn the exact content strategy we use for clients to consistently land on page one within 90 days.</p><div class="blog-meta">📅 Jan 6, 2025 · ⏱ 10 min read</div></div></div>
+      <div class="blog-card"><div class="blog-img" style="background:linear-gradient(135deg,#2ec27a,#12b3cc);">📊</div><div class="blog-body"><span class="blog-tag tag-social">Analytics</span><h3>5 KPIs Every Small Business Must Track to Measure Marketing ROI</h3><p>Stop guessing if your marketing is working. These 5 metrics tell you exactly where your money is going.</p><div class="blog-meta">📅 Dec 30, 2024 · ⏱ 6 min read</div></div></div>
+    </div>
   </div>
 </div>
 
-<button id="cart-fab" onclick="toggleCart()">&#128722; Cart (<span id="cart-count">0</span>) &mdash; $<span id="cart-total">0</span></button>
-<div id="cart-panel"><h3>Your Cart</h3><div id="cart-items"></div></div>
+<!-- NEWS -->
+<div class="page" id="page-news">
+  <div style="background:var(--gradient-main);padding:48px 24px;text-align:center;color:#fff;">
+    <h1 style="font-size:2.2rem;font-weight:900;margin-bottom:12px;">📰 Advertising & Marketing News</h1>
+    <p style="opacity:0.85;">Stay ahead with the latest updates from the digital marketing world.</p>
+  </div>
+  <div class="section" style="max-width:800px;margin:0 auto;">
+    <div class="news-card"><div class="news-icon">🔍</div><div class="news-content"><h4>Google Rolls Out March 2025 Core Algorithm Update</h4><p>Google's latest core update focuses heavily on helpful content and E-E-A-T signals. Sites with thin or AI-generated content seeing ranking drops.</p><div class="news-date">📅 February 15, 2025 · Google Search Central</div></div></div>
+    <div class="news-card"><div class="news-icon">📱</div><div class="news-content"><h4>Meta Launches New AI-Powered Ad Targeting Tools for SMBs</h4><p>Meta Advantage+ campaigns now use advanced AI to automatically find your best-fit audiences, reducing cost-per-acquisition for small businesses.</p><div class="news-date">📅 February 12, 2025 · Meta Business Blog</div></div></div>
+    <div class="news-card"><div class="news-icon">🎯</div><div class="news-content"><h4>Google Ads Performance Max Now Offers Brand Exclusions</h4><p>Advertisers can now exclude competitors' brand terms from Performance Max campaigns, giving businesses greater control over ad placement.</p><div class="news-date">📅 February 9, 2025 · Google Ads Blog</div></div></div>
+    <div class="news-card"><div class="news-icon">📊</div><div class="news-content"><h4>TikTok Ad Spend Surges 45% YoY Despite Uncertainty</h4><p>Despite regulatory uncertainty, TikTok ad revenue continues to grow strongly. Businesses investing now may benefit from lower CPMs.</p><div class="news-date">📅 February 7, 2025 · eMarketer</div></div></div>
+    <div class="news-card"><div class="news-icon">🤖</div><div class="news-content"><h4>AI-Generated Content and Google: What You Need to Know</h4><p>Google clarified its stance on AI content — quality and helpfulness matter more than origin. Mass-produced low-quality AI content faces penalties.</p><div class="news-date">📅 February 3, 2025 · Search Engine Journal</div></div></div>
+    <div class="news-card"><div class="news-icon">📧</div><div class="news-content"><h4>Email Marketing ROI Hits 10-Year High at $42 Per $1 Spent</h4><p>New Litmus report confirms email marketing remains the highest-ROI channel. Personalization and segmentation are the biggest performance drivers.</p><div class="news-date">📅 January 29, 2025 · Litmus Research</div></div></div>
+  </div>
+</div>
+
+<!-- FORUM -->
+<div class="page" id="page-forum">
+  <div style="background:var(--gradient-main);padding:48px 24px;text-align:center;color:#fff;">
+    <h1 style="font-size:2.2rem;font-weight:900;margin-bottom:12px;">💬 Client Community Forum</h1>
+    <p style="opacity:0.85;">Connect, ask questions, and share insights with other Lissia Design clients.</p>
+  </div>
+  <div class="section" style="max-width:860px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;flex-wrap:wrap;gap:12px;">
+      <h3 style="font-size:1.2rem;font-weight:700;color:var(--navy);">Recent Discussions</h3>
+      <button class="btn btn-teal" style="padding:10px 22px;font-size:13px;" onclick="showSupportModal()">+ New Post</button>
+    </div>
+    <div class="forum-post"><h4>How long does it typically take to see SEO results?</h4><p>I just started my SEO campaign last month and wondering what's a realistic timeline to expect improvements in my rankings...</p><div class="forum-meta"><span>👤 Sarah M.</span><span>📅 Feb 14, 2025</span><span>💬 7 replies</span><span class="forum-badge badge-answered">✓ Answered</span></div></div>
+    <div class="forum-post"><h4>Best practices for Google Business Profile optimization?</h4><p>Gina mentioned updating my GBP weekly — would love tips from other clients on what's been working for local SEO...</p><div class="forum-meta"><span>👤 James R.</span><span>📅 Feb 11, 2025</span><span>💬 4 replies</span><span class="forum-badge badge-answered">✓ Answered</span></div></div>
+    <div class="forum-post"><h4>Facebook Ads vs. Google Ads for a local service business?</h4><p>Running a plumbing company in Florida. Which platform has given you better results for service-based local businesses?</p><div class="forum-meta"><span>👤 Mike T.</span><span>📅 Feb 8, 2025</span><span>💬 12 replies</span><span class="forum-badge badge-open">💬 Open</span></div></div>
+    <div class="forum-post"><h4>Content calendar — how do you plan 30 days of social posts?</h4><p>Looking for a system or template to plan a month of content ahead of time without spending too many hours on it each week...</p><div class="forum-meta"><span>👤 Priya K.</span><span>📅 Feb 5, 2025</span><span>💬 9 replies</span><span class="forum-badge badge-answered">✓ Answered</span></div></div>
+    <div class="forum-post"><h4>Website redesign ROI — was it worth it for your business?</h4><p>Considering a full website refresh. Would love to hear from clients who've done it — did you see a measurable uptick in leads?</p><div class="forum-meta"><span>👤 Linda C.</span><span>📅 Jan 31, 2025</span><span>💬 6 replies</span><span class="forum-badge badge-open">💬 Open</span></div></div>
+  </div>
+</div>
+
+<!-- SCAN -->
+<div class="page" id="page-scan">
+  <div style="background:var(--gradient-main);padding:48px 24px;text-align:center;color:#fff;">
+    <h1 style="font-size:2.2rem;font-weight:900;margin-bottom:12px;">🔍 Free Business Listings Scan</h1>
+    <p style="opacity:0.85;">Instantly see how your business appears across Google, Yelp, Facebook, and 40+ directories.</p>
+  </div>
+  <div class="section" style="max-width:900px;margin:0 auto;">
+    <div class="scan-box">
+      <h2>Check Your Business Health — Free!</h2>
+      <p>Discover inconsistent listings, missing info, and opportunities to improve your local visibility in seconds.</p>
+      <div class="scan-form">
+        <input type="text" id="scan-biz" placeholder="Business Name (e.g. Joe's Plumbing)" />
+        <input type="text" id="scan-zip" placeholder="ZIP Code" style="max-width:140px;" />
+        <button class="btn btn-primary" onclick="runScan()">🔍 Scan Now</button>
+      </div>
+      <div class="scan-platforms">
+        <span>🟢 Google</span><span>🔴 Yelp</span><span>🔵 Facebook</span>
+        <span>🍎 Apple Maps</span><span>📍 Bing Places</span><span>🗺️ Foursquare</span>
+        <span>📞 Yellow Pages</span><span>+ 35 more</span>
+      </div>
+      <div class="scan-results" id="scan-results">
+        <h3 style="color:var(--navy);margin-bottom:20px;font-size:1.2rem;">📋 Scan Results for <span id="scan-biz-name"></span></h3>
+        <div class="scan-result-item"><div style="display:flex;align-items:center;"><div class="status-dot status-ok"></div>🟢 Google Business Profile</div><span style="color:#2ec27a;font-weight:700;">✓ Found & Accurate</span></div>
+        <div class="scan-result-item"><div style="display:flex;align-items:center;"><div class="status-dot status-warn"></div>⚠️ Yelp</div><span style="color:#e0a020;font-weight:700;">⚠ Missing Hours</span></div>
+        <div class="scan-result-item"><div style="display:flex;align-items:center;"><div class="status-dot status-ok"></div>🔵 Facebook Business</div><span style="color:#2ec27a;font-weight:700;">✓ Found & Accurate</span></div>
+        <div class="scan-result-item"><div style="display:flex;align-items:center;"><div class="status-dot status-err"></div>🍎 Apple Maps</div><span style="color:#e05050;font-weight:700;">✗ Not Listed</span></div>
+        <div class="scan-result-item"><div style="display:flex;align-items:center;"><div class="status-dot status-warn"></div>📍 Bing Places</div><span style="color:#e0a020;font-weight:700;">⚠ Outdated Address</span></div>
+        <div class="scan-result-item"><div style="display:flex;align-items:center;"><div class="status-dot status-err"></div>📞 Yellow Pages</div><span style="color:#e05050;font-weight:700;">✗ Not Listed</span></div>
+        <div style="margin-top:24px;padding:20px;background:rgba(10,123,140,0.06);border-radius:12px;text-align:center;">
+          <p style="color:var(--navy);font-weight:700;margin-bottom:12px;">⚠️ 3 issues found that may be costing you customers!</p>
+          <button class="btn btn-teal" onclick="showSupportModal()">Get a Free Fix Consultation →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="page" id="page-faq">
+  <div style="background:var(--gradient-main);padding:48px 24px;text-align:center;color:#fff;">
+    <h1 style="font-size:2.2rem;font-weight:900;margin-bottom:12px;">❓ Frequently Asked Questions</h1>
+    <p style="opacity:0.85;">Everything you need to know about working with Lissia Design.</p>
+  </div>
+  <div class="section" style="max-width:780px;margin:0 auto;">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does it take to see SEO results? <span class="chevron">▼</span></div><div class="faq-a">SEO is a long-term investment. Most clients begin seeing meaningful improvements in 3-6 months, with significant results typically visible at the 6-12 month mark.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What does website maintenance include? <span class="chevron">▼</span></div><div class="faq-a">Our maintenance plans include regular software/plugin updates, security monitoring and patches, uptime monitoring (24/7), monthly backups, speed optimization checks, and up to 2 hours of content updates per month.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I pay for services? <span class="chevron">▼</span></div><div class="faq-a">We accept all major credit/debit cards, ACH bank transfers, and PayPal. Monthly retainer clients are billed on the 1st of each month. Use the "Pay Now" button in the navigation to quickly update payment information or pay an invoice.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I own my website and content? <span class="chevron">▼</span></div><div class="faq-a">Yes — 100%. Once your project is paid in full, all work product belongs to you. We transfer all access credentials and asset files to you upon project completion. We never hold your website hostage.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your content creation process? <span class="chevron">▼</span></div><div class="faq-a">We start with a discovery call to understand your voice, audience, and goals. Our team creates a content calendar for your review and approval before anything is published.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I get support or request changes? <span class="chevron">▼</span></div><div class="faq-a">Use the "Request Support" button on any page to send a message directly to Gina at gina@lissiadesign.com. We aim to respond to all support requests within 1 business day.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What social media platforms do you manage? <span class="chevron">▼</span></div><div class="faq-a">We manage Facebook, Instagram, LinkedIn, Twitter/X, TikTok, Pinterest, and Google Business Profile. Most clients choose 2-3 platforms where their audience is most active.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I cancel my services at any time? <span class="chevron">▼</span></div><div class="faq-a">Monthly retainer services require 30 days written notice to cancel. We don't believe in locking clients into long-term contracts — we'd rather earn your business every month with great results.</div></div>
+    <div style="text-align:center;margin-top:40px;padding:32px;background:#fff;border-radius:16px;box-shadow:var(--shadow);">
+      <h3 style="color:var(--navy);font-weight:800;margin-bottom:10px;">Still have questions?</h3>
+      <p style="color:var(--gray);margin-bottom:20px;">Gina is happy to help! Reach out directly and we'll get back to you within 1 business day.</p>
+      <button class="btn btn-teal" onclick="showSupportModal()">📧 Ask Gina Directly</button>
+    </div>
+  </div>
+</div>
+
+<!-- SETTINGS -->
+<div class="page" id="page-settings">
+  <div style="background:var(--gradient-main);padding:48px 24px;text-align:center;color:#fff;">
+    <h1 style="font-size:2.2rem;font-weight:900;margin-bottom:12px;">⚙️ Account Settings</h1>
+    <p style="opacity:0.85;">Customize your Lissia Design experience.</p>
+  </div>
+  <div class="section" style="max-width:700px;margin:0 auto;">
+    <div class="settings-panel">
+      <h3>🔔 Notifications</h3>
+      <div class="setting-row"><div class="setting-info"><h4>Email Updates</h4><p>Receive monthly reports and campaign updates</p></div><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+      <div class="setting-row"><div class="setting-info"><h4>Blog Notifications</h4><p>Get notified when new blog posts are published</p></div><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+      <div class="setting-row"><div class="setting-info"><h4>Marketing News Alerts</h4><p>Weekly digest of ad & marketing news</p></div><button class="toggle" onclick="this.classList.toggle('on')"></button></div>
+      <div class="setting-row"><div class="setting-info"><h4>Forum Activity</h4><p>Notifications when someone replies to your posts</p></div><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+    </div>
+    <div class="settings-panel">
+      <h3>💳 Billing Preferences</h3>
+      <div class="setting-row"><div class="setting-info"><h4>Auto-Pay</h4><p>Automatically charge saved card on invoice due date</p></div><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+      <div class="setting-row"><div class="setting-info"><h4>Invoice Reminders</h4><p>Receive email reminders 3 days before invoice due</p></div><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+      <div class="setting-row"><div class="setting-info"><h4>Payment Receipts</h4><p>Email receipts for all successful payments</p></div><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+    </div>
+    <div class="settings-panel">
+      <h3>🔒 Privacy & Security</h3>
+      <div class="setting-row"><div class="setting-info"><h4>Two-Factor Authentication</h4><p>Add an extra layer of security to your account</p></div><button class="toggle" onclick="this.classList.toggle('on')"></button></div>
+      <div class="setting-row"><div class="setting-info"><h4>Login Alerts</h4><p>Email me when someone logs into my account</p></div><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+    </div>
+    <div style="text-align:center;">
+      <button class="btn btn-teal" onclick="alert('Settings saved! ✓')">💾 Save Settings</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <div style="background:var(--gradient-main);padding:48px 24px;text-align:center;color:#fff;">
+    <h1 style="font-size:2.2rem;font-weight:900;margin-bottom:12px;">📞 Get In Touch</h1>
+    <p style="opacity:0.85;">Ready to grow your business? Let's talk. We'd love to hear from you.</p>
+  </div>
+  <div class="section" style="max-width:800px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:32px;">
+      <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:var(--shadow);text-align:center;"><div style="font-size:36px;margin-bottom:12px;">📧</div><h3 style="color:var(--navy);margin-bottom:8px;">Email Gina</h3><a href="mailto:gina@lissiadesign.com" style="color:var(--teal);font-weight:700;text-decoration:none;">gina@lissiadesign.com</a></div>
+      <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:var(--shadow);text-align:center;"><div style="font-size:36px;margin-bottom:12px;">⏰</div><h3 style="color:var(--navy);margin-bottom:8px;">Response Time</h3><p style="color:var(--gray);">Within 1 business day</p></div>
+    </div>
+    <div style="background:#fff;border-radius:20px;padding:40px;box-shadow:var(--shadow);">
+      <h2 style="color:var(--navy);font-weight:800;margin-bottom:24px;">Send a Message</h2>
+      <div id="contact-success" class="form-success">✅ Message sent! Gina will be in touch within 1 business day.</div>
+      <div id="contact-form">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane" /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith" /></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="jane@yourbusiness.com" /></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(555) 000-0000" /></div>
+        <div class="form-group"><label>I'm Interested In</label><select><option>SEO / Search Engine Optimization</option><option>Website Creation & Maintenance</option><option>Social Media Management</option><option>Content Creation</option><option>Graphic Design & Branding</option><option>Paid Advertising (PPC)</option><option>Full-Service Package</option></select></div>
+        <div class="form-group"><label>Tell Us About Your Business</label><textarea placeholder="What does your business do? What are your main marketing goals?"></textarea></div>
+        <button class="btn btn-teal" style="width:100%;justify-content:center;padding:16px;" onclick="submitContact()">🚀 Send Message to Gina</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT BAR -->
+<div class="contact-bar">
+  <div class="contact-item">📧 <a href="mailto:gina@lissiadesign.com">gina@lissiadesign.com</a></div>
+  <div class="contact-item">🌐 <a href="#">lissiadesign.com</a></div>
+  <div class="contact-item"><button class="btn btn-gold" style="padding:8px 20px;font-size:13px;" onclick="showSupportModal()">🆘 Request Support</button></div>
+  <div class="contact-item"><button class="btn btn-teal" style="padding:8px 20px;font-size:13px;" onclick="showPage('contact')">📞 Get Started</button></div>
+</div>
+
+<footer>
+  <strong>Lissia Design LLC</strong> — Grow Your Business · Build Your Brand · Succeed Online<br>
+  <a href="mailto:gina@lissiadesign.com" style="color:var(--teal-light);">gina@lissiadesign.com</a><br><br>
+  © 2025 Lissia Design LLC. All rights reserved.
+</footer>
+
+<button class="float-support" onclick="showSupportModal()">🆘 Request Support</button>
+
+<!-- SUPPORT MODAL -->
+<div class="modal-overlay" id="support-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeSupportModal()">×</button>
+    <h3>🆘 Request Support</h3>
+    <p style="color:var(--gray);margin-bottom:20px;font-size:14px;">Your message will be sent directly to Gina at <strong>gina@lissiadesign.com</strong></p>
+    <div id="support-form-inner">
+      <div class="form-group"><label>Your Name</label><input type="text" placeholder="Your full name" /></div>
+      <div class="form-group"><label>Your Email</label><input type="email" placeholder="your@email.com" /></div>
+      <div class="form-group"><label>Support Type</label><select><option>Website Issue</option><option>SEO / Ranking Question</option><option>Social Media Management</option><option>Billing / Payment</option><option>Content / Design Request</option><option>General Question</option></select></div>
+      <div class="form-group"><label>Describe Your Issue or Request</label><textarea placeholder="Please describe what you need help with..."></textarea></div>
+      <button class="btn btn-teal" style="width:100%;justify-content:center;padding:14px;" onclick="submitSupport()">📧 Send to Gina</button>
+    </div>
+    <div id="support-success" class="form-success">✅ Your request has been sent to Gina!<br><small style="color:var(--gray);">She'll respond within 1 business day.</small></div>
+  </div>
+</div>
+
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="pay-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closePayModal()">×</button>
+    <h3>💳 Update Payment Info</h3>
+    <p style="color:var(--gray);margin-bottom:20px;font-size:14px;">Securely update your billing information on file.</p>
+    <div class="form-group"><label>Cardholder Name</label><input type="text" placeholder="Jane Smith" /></div>
+    <div class="form-group"><label>Card Number</label><input type="text" placeholder="•••• •••• •••• ••••" maxlength="19" /></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div class="form-group"><label>Expiry</label><input type="text" placeholder="MM/YY" maxlength="5" /></div>
+      <div class="form-group"><label>CVV</label><input type="text" placeholder="•••" maxlength="4" /></div>
+    </div>
+    <div class="form-group"><label>Billing ZIP Code</label><input type="text" placeholder="12345" maxlength="10" /></div>
+    <button class="btn btn-teal" style="width:100%;justify-content:center;padding:14px;" onclick="alert('Payment info updated securely! ✓');closePayModal();">🔒 Update Payment Info</button>
+    <p style="text-align:center;margin-top:12px;font-size:12px;color:#aaa;">🔒 Secured with 256-bit SSL encryption</p>
+  </div>
+</div>
 
 <script>
-var SUBS={A:'Business Essentials',B:'Flyers, Handouts & Print Promos',C:'Signs, Banners & Event Graphics',D:'Stickers, Labels & Packaging',E:'Apparel & Uniforms',F:'Promotional Products',G:'Marketing Kits & Bundles',H:'Digital Add-Ons'};
-var ADDONS=[
-  {id:'rush',name:'Rush Design (24-48 hr)',price:75},
-  {id:'concepts2',name:'2 Concepts Upgrade',price:50},
-  {id:'concepts3',name:'3 Concepts Upgrade',price:85},
-  {id:'revisions',name:'Additional Revision Pack',price:40},
-  {id:'source',name:'Source File Delivery (AI/PSD/INDD)',price:60},
-  {id:'copy',name:'Copywriting Add-On',price:80},
-  {id:'stock',name:'Stock Photo Sourcing',price:35},
-  {id:'brand_check',name:'Brand Consistency Check',price:45},
-  {id:'vendor_prep',name:'Vendor Template Setup / Preflight',price:55}
-];
-var DD=['Print-ready PDF with bleed/crop marks','Web-ready PNG/JPG exports','2 revision rounds included'];
-var DI=['Logo file (or request logo recreation add-on)','Brand colors (or choose for me)','Text/copy to include','Contact info / address (if relevant)','Examples/inspiration links (optional)'];
-var S=[
-  {id:'a1',sub:'A',name:'Business Card Design',price:95,desc:'Professional, print-ready business card design reflecting your brand identity.',d:[...DD,'Both sides designed (if double-sided)'],i:[...DI],t:'3 business days'},
-  {id:'a2',sub:'A',name:'Letterhead Design',price:85,desc:'Branded letterhead template for professional correspondence.',d:[...DD,'DOCX editable template'],i:[...DI],t:'3 business days'},
-  {id:'a3',sub:'A',name:'Envelope Design (Standard + Window)',price:90,desc:'Custom envelope design in both standard and window formats.',d:[...DD,'#10 and window envelope layouts'],i:[...DI],t:'3 business days'},
-  {id:'a4',sub:'A',name:'Presentation Folder Design',price:145,desc:'Custom presentation folder with pocket and business card slot layouts.',d:[...DD,'Flat dieline + folded mockup'],i:[...DI],t:'3 business days'},
-  {id:'a5',sub:'A',name:'Notepad / NCR Form Design',price:120,desc:'Professional notepad or multi-part NCR form for invoices or work orders.',d:[...DD,'Multi-part form layout'],i:[...DI,'Form field layout/content'],t:'3 business days'},
-  {id:'b1',sub:'B',name:'Flyer Design (Single or Double-Sided)',price:99,desc:'Eye-catching flyer design for events, promotions, or general marketing.',d:[...DD],i:[...DI],t:'3 business days'},
-  {id:'b2',sub:'B',name:'Postcard / EDDM Mailer Design',price:115,desc:'Targeted postcard design sized and formatted for EDDM mailing programs.',d:[...DD,'EDDM compliance layout with indicia zone'],i:[...DI,'Offer/CTA details'],t:'3 business days'},
-  {id:'b3',sub:'B',name:'Brochure Design (Tri-fold, Bi-fold, Z-fold)',price:165,desc:'Full brochure design in your choice of fold style.',d:[...DD,'Panel-by-panel layout with fold marks'],i:[...DI,'All panel content/copy'],t:'3 business days'},
-  {id:'b4',sub:'B',name:'Rack Card Design',price:85,desc:'Slim rack card design ideal for display stands and hotel lobbies.',d:[...DD],i:[...DI],t:'3 business days'},
-  {id:'b5',sub:'B',name:'Door Hanger Design',price:80,desc:'Custom door hanger design for direct neighborhood marketing.',d:[...DD],i:[...DI],t:'3 business days'},
-  {id:'b6',sub:'B',name:'Menu / Price Sheet Design',price:135,desc:'Clean, professional menu or price sheet design for print or digital use.',d:[...DD,'Digital web-optimized PDF'],i:[...DI,'Full menu/price list content'],t:'3 business days'},
-  {id:'b7',sub:'B',name:'Coupon / Voucher Design',price:75,desc:'Branded coupon or gift voucher design with perforation-ready layout.',d:[...DD,'Perforation guide marks'],i:[...DI,'Offer terms and expiration'],t:'3 business days'},
-  {id:'c1',sub:'C',name:'Retractable Banner Design',price:125,desc:'Vertical retractable banner designed for trade shows and events.',d:[...DD],i:[...DI],t:'3 business days'},
-  {id:'c2',sub:'C',name:'Vinyl Banner Design',price:110,desc:'Large-format vinyl banner design for outdoor or indoor display.',d:[...DD],i:[...DI,'Banner dimensions'],t:'3 business days'},
-  {id:'c3',sub:'C',name:'Yard Sign Design',price:85,desc:'Bold, readable yard sign design for real estate, campaigns, or promotions.',d:[...DD],i:[...DI],t:'3 business days'},
-  {id:'c4',sub:'C',name:'A-Frame / Sidewalk Sign Design',price:95,desc:'Double-sided A-frame or sidewalk sign design for storefront traffic.',d:[...DD,'Both panel layouts'],i:[...DI],t:'3 business days'},
-  {id:'c5',sub:'C',name:'Foam Board / Poster Design',price:100,desc:'Large-format foam board or poster design for indoor displays.',d:[...DD],i:[...DI],t:'3 business days'},
-  {id:'c6',sub:'C',name:'Window Cling / Window Decal Design',price:90,desc:'Custom window cling or decal design for storefronts.',d:[...DD,'Reversed/mirrored version for inside application'],i:[...DI],t:'3 business days'},
-  {id:'c7',sub:'C',name:'Trade Show Backdrop Design',price:195,desc:'Full-bleed trade show backdrop or step-and-repeat wall design.',d:[...DD,'Tiled panels if required by vendor'],i:[...DI,'Exact backdrop dimensions'],t:'3 business days'},
-  {id:'d1',sub:'D',name:'Logo Sticker Design (Die-Cut / Kiss-Cut)',price:85,desc:'Custom sticker design optimized for die-cut or kiss-cut production.',d:[...DD,'Cut path/dieline file'],i:[...DI],t:'3 business days'},
-  {id:'d2',sub:'D',name:'Product Label Design',price:130,desc:'Professional product label design formatted for your container dimensions.',d:[...DD,'Wraparound or front/back panel layouts'],i:[...DI,'Container dimensions and material'],t:'3 business days'},
-  {id:'d3',sub:'D',name:'Shipping Label / Address Label Design',price:70,desc:'Branded shipping or address label design for professional packaging.',d:[...DD],i:[...DI],t:'3 business days'},
-  {id:'d4',sub:'D',name:'Packaging Sleeve / Box Wrap Design',price:175,desc:'Full packaging sleeve or box wrap design for retail or gift products.',d:[...DD,'Flat dieline and 3D mockup'],i:[...DI,'Exact box/sleeve dimensions and dieline'],t:'3 business days'},
-  {id:'e1',sub:'E',name:'T-Shirt / Polo / Hoodie Print-Ready Design',price:110,desc:'Screen-print or DTG-ready apparel graphic design with placement mockups.',d:[...DD,'Vector art + garment mockup (front/back)'],i:[...DI,'Garment color, print location, size info'],t:'3 business days'},
-  {id:'e2',sub:'E',name:'Hat / Cap Embroidery Design',price:95,desc:'Simplified, stitch-friendly art file optimized for embroidery digitization.',d:[...DD,'Simplified vector; digitizing referral'],i:[...DI,'Cap style, patch area size'],t:'3 business days'},
-  {id:'e3',sub:'E',name:'Hi-Vis / Workwear Logo Placement Mockups',price:85,desc:'Logo placement mockup files for hi-vis vests, jackets, and workwear.',d:[...DD,'Placement mockup per garment'],i:[...DI,'Garment photos or templates'],t:'3 business days'},
-  {id:'e4',sub:'E',name:'Team / Event Shirt Design',price:140,desc:'Custom team or event shirt with sponsor logo layout on front, back, or sleeves.',d:[...DD,'Full front/back layout + sponsor tier guide'],i:[...DI,'Sponsor logos, sponsor tier list'],t:'3 business days'},
-  {id:'f1',sub:'F',name:'Pen / Stylus Imprint Layout',price:60,desc:'Logo imprint artwork sized and formatted for pen or stylus printing.',d:[...DD],i:[...DI],t:'3 business days'},
-  {id:'f2',sub:'F',name:'Mug / Tumbler Wrap Design',price:85,desc:'Full wraparound mug or tumbler design for sublimation or heat transfer.',d:[...DD,'Wrap template matched to vessel size'],i:[...DI,'Mug/tumbler dimensions or vendor template'],t:'3 business days'},
-  {id:'f3',sub:'F',name:'Tote Bag / Backpack Print Layout',price:80,desc:'Branded tote or backpack imprint design ready for screen print or heat press.',d:[...DD],i:[...DI,'Bag dimensions, print area'],t:'3 business days'},
-  {id:'f4',sub:'F',name:'Water Bottle Print Layout',price:70,desc:'Branded water bottle wrap or imprint design.',d:[...DD],i:[...DI,'Bottle size, vendor template'],t:'3 business days'},
-  {id:'f5',sub:'F',name:'Notebook / Journal Cover Design',price:90,desc:'Custom notebook or journal cover design for branded giveaways.',d:[...DD],i:[...DI,'Notebook dimensions, binding type'],t:'3 business days'},
-  {id:'f6',sub:'F',name:'Keychain / Koozie / Small Giveaway Layouts',price:65,desc:'Compact imprint artwork for keychains, koozies, and small promotional items.',d:[...DD],i:[...DI],t:'3 business days'},
-  {id:'f7',sub:'F',name:'Tablecloth / Table Runner Design',price:120,desc:'Custom tablecloth or runner design for branded trade show displays.',d:[...DD],i:[...DI,'Table size (6ft / 8ft)'],t:'3 business days'},
-  {id:'f8',sub:'F',name:'Pop-up Tent / Canopy Graphics Design',price:195,desc:'Full-coverage canopy wall and valance design for branded outdoor tents.',d:[...DD,'Full-bleed panel files per wall + valance'],i:[...DI,'Tent size, vendor template'],t:'3 business days'},
-  {id:'g1',sub:'G',name:'Brand Starter Kit Design',price:249,desc:'Essential brand collateral bundle: business card + letterhead + email signature.',d:['Business card (front + back)','Letterhead template','Email signature (HTML + PNG)','Print-ready PDFs','Web exports'],i:[...DI],t:'5 business days',bundle:true,inc:'Business Card + Letterhead + Email Signature'},
-  {id:'g2',sub:'G',name:'Event Kit Design',price:449,desc:'Complete event package: banner + tablecloth + handout + promo item imprint.',d:['Retractable or vinyl banner','Tablecloth design','Event flyer/handout','Promo item imprint layout','All print-ready files'],i:[...DI,'Event name, date, venue details'],t:'5 business days',bundle:true,inc:'Banner + Tablecloth + Flyer + Promo Item'},
-  {id:'g3',sub:'G',name:'Direct Mail Kit Design',price:299,desc:'Full direct mail package: postcard + offer insert + EDDM mailing panel.',d:['EDDM-ready postcard','Offer insert/flyer','Mailing panel with indicia zone','Print-ready PDFs'],i:[...DI,'Target offer/CTA, mailing route details'],t:'5 business days',bundle:true,inc:'EDDM Postcard + Offer Insert + Mailing Panel'},
-  {id:'g4',sub:'G',name:'Grand Opening Kit Design',price:399,desc:'High-impact grand opening package: yard sign + banner + flyers + window decals.',d:['Yard sign design','Vinyl or retractable banner','Flyer design (double-sided)','Window cling/decal design','All print-ready files'],i:[...DI,'Opening date, address, special offers'],t:'5 business days',bundle:true,inc:'Yard Sign + Banner + Flyer + Window Decal'},
-  {id:'h1',sub:'H',name:'Social Media Ad Set Design',price:130,desc:'Branded ad graphics in all major sizes for Facebook, Instagram, and LinkedIn.',d:['FB feed, story, carousel sizes','IG feed + story sizes','LinkedIn banner + sponsored sizes','Web-ready PNGs'],i:[...DI,'Ad headline, offer, CTA text'],t:'3 business days'},
-  {id:'h2',sub:'H',name:'Email Signature Design',price:75,desc:'Branded HTML email signature with logo, contact details, and social links.',d:['HTML file (Gmail/Outlook compatible)','PNG fallback version','Setup instructions'],i:[...DI,'All contact info, social profile URLs'],t:'3 business days'},
-  {id:'h3',sub:'H',name:'Google Business Profile Cover & Post Graphics',price:95,desc:'Optimized cover photo and post graphics sized for Google Business Profile.',d:['Cover photo (1332x750px)','5 branded post graphic templates','Web-ready PNGs'],i:[...DI,'Business hours, current promotions'],t:'3 business days'},
-  {id:'h4',sub:'H',name:'QR Code Landing Panel Design',price:85,desc:'Print-safe QR placement design with scan testing and branded call-to-action panel.',d:['QR panel layout (print + digital)','Scan-tested QR code file','Branded surround graphic'],i:[...DI,'Destination URL'],t:'3 business days'}
-];
-
-var activeFilter='ALL',cart={},expanded={},addons={};
-function setFilter(f,btn){activeFilter=f;document.querySelectorAll('.pill').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');renderCards();}
-function renderCards(){
-  var q=document.getElementById('search').value.toLowerCase();
-  var filtered=S.filter(function(s){return(activeFilter==='ALL'||s.sub===activeFilter)&&(!q||s.name.toLowerCase().includes(q)||s.desc.toLowerCase().includes(q));});
-  document.getElementById('count').textContent='Showing '+filtered.length+' of '+S.length+' services';
-  var grid=document.getElementById('grid'),nr=document.getElementById('no-results');
-  if(!filtered.length){grid.innerHTML='';nr.style.display='block';return;}
-  nr.style.display='none';
-  grid.innerHTML=filtered.map(cardHTML).join('');
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo(0,0);
 }
-function cardHTML(s){
-  var color=s.sub==='G'?'#f0c040':'#0a7b8c',tc=s.sub==='G'?'#0d2b45':'#fff';
-  var at=(addons[s.id]||[]).reduce(function(sum,a){return sum+a.price;},0);
-  var isExp=!!expanded[s.id],inCart=!!cart[s.id];
-  return'<div class="card'+(s.bundle?' bundle':'')+'" id="card-'+s.id+'">'+
-    (s.bundle?'<div class="bundle-banner">&#9733; BUNDLE &mdash; SAVE MORE</div>':'')+
-    '<div class="card-body">'+
-    '<span class="badge" style="background:'+color+';color:'+tc+'">'+SUBS[s.sub]+'</span>'+
-    '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">'+
-    '<div class="card-title">'+s.name+'</div><div class="card-price">$'+s.price+'</div></div>'+
-    '<p class="card-desc">'+s.desc+'</p>'+
-    (s.inc?'<div class="bundle-inc"><strong>Includes:</strong> '+s.inc+'</div>':'')+
-    '<div class="card-meta"><span>&#9201; '+s.t+'</span><span>&#9999; 2 revisions</span></div></div>'+
-    '<div class="card-footer">'+
-    '<button class="toggle-btn" onclick="toggleExpand(\''+s.id+'\')">'+
-    (isExp?'&#9650; Hide Details':'&#9660; View Details + Add-ons')+'</button>'+
-    '<div class="details'+(isExp?' open':'')+'" id="details-'+s.id+'">'+
-    '<h4>Deliverables:</h4><ul>'+s.d.map(function(d){return'<li>'+d+'</li>';}).join('')+'</ul>'+
-    '<h4>Required Inputs:</h4><ul>'+s.i.map(function(i){return'<li>'+i+'</li>';}).join('')+'</ul>'+
-    '<h4>Add-ons:</h4>'+
-    ADDONS.map(function(a){var chk=(addons[s.id]||[]).some(function(x){return x.id===a.id;});
-      return'<label class="addon-item"><input type="checkbox"'+(chk?' checked':'')+' onchange="toggleAddon(\''+s.id+'\',\''+a.id+'\')"/> '+a.name+' <strong style="color:#0a7b8c">+$'+a.price+'</strong></label>';}).join('')+
-    '</div>'+
-    '<button class="add-btn'+(inCart?' added':'')+'" onclick="addToCart(\''+s.id+'\')">'+
-    (inCart?'&#10003; In Cart':'Add to Cart &mdash; $'+(s.price+at).toLocaleString())+'</button></div></div>';
+function toggleFaq(el) {
+  const answer = el.nextElementSibling;
+  const chevron = el.querySelector('.chevron');
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.chevron').forEach(c => { c.style.transform = 'rotate(0deg)'; });
+  if (!isOpen) { answer.classList.add('open'); chevron.style.transform = 'rotate(180deg)'; }
 }
-function toggleExpand(id){expanded[id]=!expanded[id];renderCards();}
-function toggleAddon(sid,aid){
-  if(!addons[sid])addons[sid]=[];
-  var idx=addons[sid].findIndex(function(a){return a.id===aid;});
-  if(idx>=0)addons[sid].splice(idx,1);
-  else addons[sid].push(ADDONS.find(function(a){return a.id===aid;}));
-  renderCards();
+function showSupportModal() {
+  document.getElementById('support-modal').classList.add('show');
+  document.getElementById('support-form-inner').style.display = 'block';
+  document.getElementById('support-success').classList.remove('show');
 }
-function addToCart(id){
-  var svc=S.find(function(s){return s.id===id;});
-  cart[id]=Object.assign({},svc,{selectedAddons:(addons[id]||[]).slice()});
-  renderCart();renderCards();
-  document.getElementById('cart-panel').classList.add('open');
+function closeSupportModal() { document.getElementById('support-modal').classList.remove('show'); }
+function submitSupport() {
+  document.getElementById('support-form-inner').style.display = 'none';
+  document.getElementById('support-success').classList.add('show');
 }
-function removeFromCart(id){delete cart[id];renderCart();renderCards();}
-function renderCart(){
-  var items=Object.values(cart);
-  var total=items.reduce(function(s,i){return s+i.price+(i.selectedAddons||[]).reduce(function(a,b){return a+b.price;},0);},0);
-  document.getElementById('cart-count').textContent=items.length;
-  document.getElementById('cart-total').textContent=total.toLocaleString();
-  var el=document.getElementById('cart-items');
-  if(!items.length){el.innerHTML='<p style="color:#aaa;font-size:12px;text-align:center;padding:20px 0">No items yet.</p>';return;}
-  el.innerHTML=items.map(function(item){
-    return'<div class="cart-item"><div class="cart-item-name"><span>'+item.name+'</span><span>$'+item.price+'</span></div>'+
-    (item.selectedAddons||[]).map(function(a){return'<div class="cart-addon"><span>+ '+a.name+'</span><span>$'+a.price+'</span></div>';}).join('')+
-    '<button class="remove-btn" onclick="removeFromCart(\''+item.id+'\')">Remove</button></div>';
-  }).join('')+
-  '<div class="cart-total"><span>Total</span><span>$'+total.toLocaleString()+'</span></div>'+
-  '<button class="checkout-btn" onclick="alert(\'Checkout coming soon!\')">Proceed to Checkout &#8594;</button>';
+function showPayModal() { document.getElementById('pay-modal').classList.add('show'); }
+function closePayModal() { document.getElementById('pay-modal').classList.remove('show'); }
+function runScan() {
+  const biz = document.getElementById('scan-biz').value.trim();
+  if (!biz) { alert('Please enter your business name!'); return; }
+  document.getElementById('scan-biz-name').textContent = biz;
+  const btn = event.target;
+  btn.textContent = '⏳ Scanning...';
+  setTimeout(() => { btn.textContent = '🔍 Scan Again'; document.getElementById('scan-results').classList.add('show'); }, 2000);
 }
-function toggleCart(){document.getElementById('cart-panel').classList.toggle('open');}
-function showTab(t){
-  document.getElementById('page-catalog').style.display=t==='catalog'?'':'none';
-  document.getElementById('page-admin').style.display=t==='admin'?'':'none';
-  document.getElementById('tab-catalog').className=t==='catalog'?'active':'';
-  document.getElementById('tab-admin').className=t==='admin'?'active':'';
-  if(t==='admin')renderAdmin();
+function submitContact() {
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('contact-success').classList.add('show');
 }
-function renderAdmin(){
-  var checks=['All 8 subcategories visible in filter bar','All 42 service items appear in catalog','Filter by subcategory returns correct items only','All 4 bundles show BUNDLE badge','Each card shows price, turnaround, revision count','Expanding a card reveals deliverables + inputs + add-ons','Selecting add-ons updates cart total correctly','Add to Cart creates line item with correct price','Cart totals accurate across mixed items','Checkout button present when cart non-empty','Bundle items have gold border treatment','Search/filter works correctly'];
-  document.getElementById('checklist').innerHTML=checks.map(function(c){return'<label class="checklist"><input type="checkbox"/> <span>'+c+'</span></label>';}).join('');
-  var rows=Object.entries(SUBS).map(function(e){
-    var id=e[0],label=e[1],items=S.filter(function(s){return s.sub===id;}),prices=items.map(function(i){return i.price;});
-    return'<tr><td><span class="badge" style="background:'+(id==='G'?'#f0c040':'#0d2b45')+';color:'+(id==='G'?'#0d2b45':'#fff')+'">'+id+'</span></td><td>'+label+'</td><td style="font-weight:700;color:#0a7b8c">'+items.length+'</td><td>$'+Math.min.apply(null,prices)+'-$'+Math.max.apply(null,prices)+'</td></tr>';
-  });
-  var all=S.map(function(s){return s.price;});
-  document.getElementById('summary-table').innerHTML='<thead><tr><th>Sub</th><th>Category</th><th>Items</th><th>Price Range</th></tr></thead><tbody>'+rows.join('')+'<tr style="background:#f0f8fa;font-weight:700"><td colspan="2" style="padding:8px 12px">TOTAL</td><td style="padding:8px 12px;color:#0a7b8c">'+S.length+'</td><td style="padding:8px 12px">$'+Math.min.apply(null,all)+'-$'+Math.max.apply(null,all)+'</td></tr></tbody>';
-}
-renderCards();renderCart();
+document.getElementById('support-modal').addEventListener('click', function(e) { if (e.target === this) closeSupportModal(); });
+document.getElementById('pay-modal').addEventListener('click', function(e) { if (e.target === this) closePayModal(); });
 </script>
 </body>
 </html>
